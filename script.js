@@ -1,26 +1,19 @@
 var slides = document.querySelectorAll('.slide');
 var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,3000);
+var slideInterval = setInterval(nextSlide,2000);
 
 function nextSlide() {
+    
+      // Remove the active class from the current slide.
   slides[currentSlide].className = 'slide';
+
+  // Increment the current slide index and wrap it around to 0 if it is greater than or equal to the number of slides.
   currentSlide = (currentSlide+1)%slides.length;
+
+    // Add the active class to the new current slide.
   slides[currentSlide].className = 'slide active';
 }
 
-var pauseButton = document.querySelector('#slider-pause');
-var nextButton = document.querySelector('#slider-next');
-var prevButton = document.querySelector('#slider-prev');
-var navButtons = document.querySelectorAll('#slider-nav button');
 
-pauseButton.onclick = function() {
-  if (pauseButton.innerHTML == '<i class="fas fa-pause"></i>') {
-    clearInterval(slideInterval);
-    pauseButton.innerHTML = '<i class="fas fa-play"></i>';
-  } else {
-    slideInterval = setInterval(nextSlide,3000);
-    pauseButton.innerHTML = '<i class="fas fa-pause"></i>';
-  }
-};
 
 

@@ -1,46 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="mySlides">
+        <img src="Images/img1.jpg" style="width: 100%; height: 50vh" />
+      </div>
 
+      <div class="mySlides">
+        <img src="Images/img2.jpg" style="width: 100%; height: 50vh" />
+      </div>
 
-</head>
+      <div class="mySlides">
+        <img src="Images/img3.jpg" style="width: 100%; height: 50vh" />
+      </div>
 
-<body>
-  <div id="slider">
-    <div class="slide">
-        <h1>African</h1>
-      <img src="Images/img1.jpg" alt="Image 1">
-    </div>
-    <div class="slide">
-        <h1>American</h1>
-      <img src="Images/img2.jpg" alt="Image 2">
-    </div>
-    <div class="slide">
-        <h1>Asian</h1>
-      <img src="Images/img3.jpg" alt="Image 3">
-    </div>
-    <div class="slide">
-        <h1>Arabic</h1>
-      <img src="Images/img4.jpg" alt="Image 4">
-    </div>
-    <div class="slide">
-        <h1>Modern </h1>
-      <img src="Images/img5.jpg" alt="Image 5">
-    </div>
-    <div class="slide">
-        <h1> European </h1>
-      <img src="Images/img6.jpg" alt="Image 6">
-    </div>
-  </div>
+      <div class="mySlides">
+        <img src="Images/img4.jpg" style="width: 100%; height: 50vh" />
+      </div>
 
-  <script src="script.js"></script>
+      <div class="mySlides">
+        <img src="Images/img5.jpg" style="width: 100%; height: 50vh" />
+      </div>
 
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-</body>
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="Images/img1.jpg"
+            style="width: 100%"
+            onclick="currentSlide(1)"
+            alt="European"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="Images/img2.jpg"
+            style="width: 100%"
+            onclick="currentSlide(2)"
+            alt="African"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="Images/img3.jpg"
+            style="width: 100%"
+            onclick="currentSlide(3)"
+            alt="American"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="Images/img4.jpg"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt="Asian"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="Images/img5.jpg"
+            style="width: 100%"
+            onclick="currentSlide(5)"
+            alt="Modern"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

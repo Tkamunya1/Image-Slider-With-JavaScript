@@ -1,19 +1,43 @@
-var slides = document.querySelectorAll('.slide');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,2000);
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function nextSlide() {
-    
-      // Remove the active class from the current slide.
-  slides[currentSlide].className = 'slide';
-
-  // Increment the current slide index and wrap it around to 0 if it is greater than or equal to the number of slides.
-  currentSlide = (currentSlide+1)%slides.length;
-
-    // Add the active class to the new current slide.
-  slides[currentSlide].className = 'slide active';
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
+let slideInterval = setInterval(() => {
+  plusSlides(1);
+}, 3000);
 
+let slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+slideshowContainer.addEventListener('mouseenter', () => {
+  clearInterval(slideInterval);
+});
 
+slideshowContainer.addEventListener('mouseleave', () => {
+  slideInterval = setInterval(() => {
+    plusSlides(1);
+  }, 3000);
+});
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
